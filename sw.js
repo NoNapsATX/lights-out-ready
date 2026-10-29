@@ -1,6 +1,6 @@
 // Lights Out Ready service worker: keeps every file on the phone so the app opens with no internet.
-const CACHE = 'lights-out-83a274e94a';
-const FILES = ["./", "index.html", "manifest.webmanifest", "map.png", "fonts/fredoka.woff", "fonts/atkinson-400.woff", "fonts/atkinson-700.woff", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "icons/apple-touch-icon.png"];
+const CACHE = 'lights-out-efbda33f68';
+const FILES = ["./", "index.html", "manifest.webmanifest", "map.png", "map-near.png", "fonts/fredoka.woff", "fonts/atkinson-400.woff", "fonts/atkinson-700.woff", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "icons/apple-touch-icon.png"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
 });
