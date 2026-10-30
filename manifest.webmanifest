@@ -1,13 +1,13 @@
 {
   "name": "Lights Out Ready",
   "short_name": "Lights Out",
-  "description": "Offline family outage plan, kids' games and parent tools.",
+  "description": "Our family's offline outage plan, tools and kids' games.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#141a33",
-  "theme_color": "#141a33",
+  "background_color": "#f4f5f9",
+  "theme_color": "#f4f5f9",
   "icons": [
     {
       "src": "icons/icon-192.png",

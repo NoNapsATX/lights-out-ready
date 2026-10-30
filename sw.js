@@ -1,20 +1,13 @@
-// Lights Out Ready service worker: keeps every file on the phone so the app opens with no internet.
-const CACHE = 'lights-out-efbda33f68';
-const FILES = ["./", "index.html", "manifest.webmanifest", "map.png", "map-near.png", "fonts/fredoka.woff", "fonts/atkinson-400.woff", "fonts/atkinson-700.woff", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "icons/apple-touch-icon.png"];
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
-});
-self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
-});
+// Lights Out Ready: keeps every file on the phone so the app opens with no internet.
+const CACHE = 'lights-out-a380c9ee11';
+const FILES = ["./", "app.css", "app.js", "audio/d0.mp3", "audio/d1.mp3", "audio/d2.mp3", "audio/d3.mp3", "audio/d4.mp3", "audio/d5.mp3", "audio/d6.mp3", "audio/d7.mp3", "audio/d8.mp3", "audio/d9.mp3", "audio/hunt_all.mp3", "audio/hunt_flashlight.mp3", "audio/hunt_intro.mp3", "audio/hunt_jacket.mp3", "audio/hunt_snack.mp3", "audio/hunt_teddy.mp3", "audio/hunt_water.mp3", "audio/kids_hi.mp3", "audio/pack_candle.mp3", "audio/pack_done.mp3", "audio/pack_flashlight.mp3", "audio/pack_intro.mp3", "audio/pack_jacket.mp3", "audio/pack_medicine.mp3", "audio/pack_snack.mp3", "audio/pack_teddy.mp3", "audio/pack_tv.mp3", "audio/pack_water.mp3", "audio/phone_done.mp3", "audio/phone_intro.mp3", "audio/phone_try.mp3", "audio/q0.mp3", "audio/q0right.mp3", "audio/q0wrong.mp3", "audio/q1.mp3", "audio/q1right.mp3", "audio/q1wrong.mp3", "audio/q2.mp3", "audio/q2right.mp3", "audio/q2wrong.mp3", "audio/q3.mp3", "audio/q3right.mp3", "audio/q3wrong.mp3", "audio/q4.mp3", "audio/q4right.mp3", "audio/q4wrong.mp3", "audio/q5.mp3", "audio/q5right.mp3", "audio/q5wrong.mp3", "audio/q6.mp3", "audio/q6right.mp3", "audio/q6wrong.mp3", "audio/q7.mp3", "audio/q7right.mp3", "audio/q7wrong.mp3", "audio/quizdone.mp3", "audio/silent.mp3", "audio/story0.mp3", "audio/story1.mp3", "audio/story2.mp3", "audio/story3.mp3", "audio/story4.mp3", "audio/story5.mp3", "audio/story6.mp3", "fonts/atkinson-400.woff", "fonts/atkinson-700.woff", "fonts/fredoka.woff", "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "img/backpack.svg", "img/book.svg", "img/candle.svg", "img/check.svg", "img/coat.svg", "img/cookie.svg", "img/cross.svg", "img/cup.svg", "img/feet.svg", "img/fire.svg", "img/flashlight.svg", "img/house.svg", "img/hug.svg", "img/moon.svg", "img/night.svg", "img/pill.svg", "img/plug.svg", "img/star.svg", "img/storm.svg", "img/teddy.svg", "img/telephone.svg", "img/tent.svg", "img/tv.svg", "index.html", "manifest.webmanifest", "map-near.png", "map.png", "plan.js"];
+self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())));
+self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
-  const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
-  e.respondWith(caches.match(req, { ignoreSearch: true }).then(hit => {
-    const net = fetch(req).then(res => {
-      if (res && res.ok) caches.open(CACHE).then(c => c.put(req, res.clone()));
-      return res;
-    }).catch(() => hit || (req.mode === 'navigate' ? caches.match('index.html') : undefined));
+  const r = e.request; if (r.method !== 'GET' || new URL(r.url).origin !== location.origin) return;
+  e.respondWith(caches.match(r, { ignoreSearch: true }).then(hit => {
+    const net = fetch(r).then(res => { if (res && res.ok) { const c = res.clone(); caches.open(CACHE).then(x => x.put(r, c)); } return res; })
+      .catch(() => hit || (r.mode === 'navigate' ? caches.match('index.html') : undefined));
     return hit || net;
   }));
 });

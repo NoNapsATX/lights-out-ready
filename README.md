@@ -1,5 +1,7 @@
 # Lights Out Ready
 
-An offline family outage app: kids' games with a recorded voice, stay-or-go and food-safety tools, the full outage plan and a local map.
+Our family's offline outage app: a "Power is out" walkthrough, stay-or-go helper, food clock, call list, street maps, the full plan, a supply checklist, and a Kids Mode with a recorded voice.
 
-Open https://nonapsatx.github.io/lights-out-ready/ once with internet, then add it to the home screen (Safari: Share > Add to Home Screen; Chrome: menu > Install app). After that it works with no internet. Personal details typed into the app stay on that phone.
+Open https://nonapsatx.github.io/lights-out-ready/ once with internet and add it to the home screen. After that it works with no internet. Details typed into the app stay on that phone.
+
+Credits: icons by Lucide (ISC license); illustrations from Microsoft Fluent Emoji (MIT license); maps © Mapbox © OpenStreetMap.
