@@ -106,7 +106,7 @@ view.addEventListener('click', e => {
 /* ---------- home ---------- */
 R.home = () => {
   const o = outage();
-  const top = `<div class="home-top"><img src="${im('moon')}" alt=""><div><div class="brand">Lights Out Ready</div><div class="status ${swOK ? 'ok' : ''}" id="status"><i></i><span>${swOK ? 'Works offline' : 'Saving for offline…'}</span></div></div>
+  const top = `<div class="home-top"><img src="icons/icon-192.png" alt="" class="logo"><div><div class="brand">Huddle Ready</div><div class="status ${swOK ? 'ok' : ''}" id="status"><i></i><span>${swOK ? 'Works offline' : 'Saving for offline…'}</span></div></div>
     <button class="icon-btn" data-go="details" aria-label="Our details">${ic('settings')}</button></div>`;
   let main;
   if (o) {

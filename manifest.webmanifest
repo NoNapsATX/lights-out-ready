@@ -1,7 +1,7 @@
 {
-  "name": "Lights Out Ready",
-  "short_name": "Lights Out",
-  "description": "Our family's offline outage plan, tools and kids' games.",
+  "name": "Huddle Ready",
+  "short_name": "Huddle Ready",
+  "description": "Power's out. Huddle up. Our family's offline outage plan, tools and kids' games.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

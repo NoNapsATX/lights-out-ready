@@ -1,4 +1,4 @@
-/* Lights Out Ready: one column, one task per screen. Night-sky ink with a flashlight-amber accent; follows the phone's light/dark setting. */
+/* Huddle Ready: one column, one task per screen. Night-sky ink with a flashlight-amber accent; follows the phone's light/dark setting. */
 @font-face{font-family:"Atkinson";src:url(fonts/atkinson-400.woff) format("woff");font-weight:400;font-display:swap}
 @font-face{font-family:"Atkinson";src:url(fonts/atkinson-700.woff) format("woff");font-weight:700;font-display:swap}
 @font-face{font-family:"Fredoka";src:url(fonts/fredoka.woff) format("woff");font-weight:300 700;font-display:swap}
@@ -259,3 +259,5 @@ mark{background:var(--accent);color:var(--accent-ink);border-radius:4px;padding:
 .keys button:active{transform:translateY(3px);box-shadow:none}
 @media (max-width:370px){.tiles{grid-template-columns:repeat(2,1fr)}.items{grid-template-columns:repeat(3,1fr)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.home-top img.logo{border-radius:22%}

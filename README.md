@@ -1,4 +1,6 @@
-# Lights Out Ready
+# Huddle Ready
+
+Power's out. Huddle up.
 
 Our family's offline outage app: a "Power is out" walkthrough, stay-or-go helper, food clock, call list, street maps, the full plan, a supply checklist, and a Kids Mode with a recorded voice.
 
